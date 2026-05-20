@@ -1,0 +1,19 @@
+Bioinformatics II Research Paper Objective (task statement)
+
+Deliverable = Presentation 4-5 slides:
+
+(strong) research: strong review of recent (2024/2025) research papers
+1) DETAILED problem definition (research problem/objective) --> detailed problem, to emphasize its importance
+- literature review DRAFT (literature review: unique study, make sure you have a contribution in it) --> we need to make sure that the problem is important, and already in use (treatment/solution)
+2) proposing solution method
+3) what is the methodology of my contribution (from the research papers)
+4) add CITATIONS for each one (name of the study (title), date, which source (e.g. Nature), it must be high-end and credible, what did it solve and what are its achievements so far
+
+some tips from the professor:
+- for the proposed problem, look for the most recent 3-4 studies, what have people reached so far, and how did they reach these results, their accuracy, their approach, how will I use this to add my contribution, etc.
+- check each paper's REVIEW, it shows the "mistakes" and issues of each older paper, and discusses additional solutions, so this is what we should also do further.
+- use Google Scholar to search (filter with dates, add keywords, etc.)
+- in the problem definition, try to make it as simple and explainable as possible, to make it easier to explain to my fellow colleagues.
+______________________________________________________________________________
+
+feedback from the professor: my contribution could be testing a ML model (for example a model that predicts drug response) and evaluate it using other datasets

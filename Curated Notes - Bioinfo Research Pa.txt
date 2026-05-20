@@ -1,0 +1,157 @@
+Curated Notes - Bioinfo Research Paper (final phase)
+
+#1 Old Notes - 
+
+========================================================================================================================================================================================================================================================================================================================================================================================
+
+#2 Phase 1 Notes - Paper Objective (task statement)
+
+Deliverable = Presentation 4-5 slides:
+
+(strong) research: strong review of recent (2024/2025) research papers
+1) DETAILED problem definition (research problem/objective) --> detailed problem, to emphasize its importance
+- literature review DRAFT (literature review: unique study, make sure you have a contribution in it) --> we need to make sure that the problem is important, and already in use (treatment/solution)
+2) proposing solution method
+3) what is the methodology of my contribution (from the research papers)
+4) add CITATIONS for each one (name of the study (title), date, which source (e.g. Nature), it must be high-end and credible, what did it solve and what are its achievements so far
+
+some tips from the professor:
+- for the proposed problem, look for the most recent 3-4 studies, what have people reached so far, and how did they reach these results, their accuracy, their approach, how will I use this to add my contribution, etc.
+- check each paper's REVIEW, it shows the "mistakes" and issues of each older paper, and discusses additional solutions, so this is what we should also do further.
+- use Google Scholar to search (filter with dates, add keywords, etc.)
+- in the problem definition, try to make it as simple and explainable as possible, to make it easier to explain to my fellow colleagues.
+______________________________________________________________________________
+
+feedback from the professor: my contribution could be testing a ML model (for example a model that predicts drug response) and evaluate it using other datasets
+
+========================================================================================================================================================================================================================================================================================================================================================================================
+
+Phase 1 - Gemini Prompt (first prompt, panicking at Cilantro, Mesaha... edited)
+
+My Bioinformatics II Course Final Project is due next week, it's very important and very difficult (for me at least), I need to write a research paper, with actual progress and my own contribution. I need to, not only come up with actual results, but also write down a research paper about my contribution, and talk about it in front of the professor in a presentation. I only have the idea from previous phases in the project, here is the reference paper uploaded here as pdf. Here are some details: 
+
+-Title: Sparsity-Aware Deconvolution of scRNA-Seq and Spatial Transcriptomics
+-Description: An algorithm integrating single-cell RNA sequencing with spatial data that enforces strict sparsity constraints to prevent hallucinating the presence of all cell types across all locations.
+-Motivation: Deconvolution methods use scRNA-seq and spatial transcriptomics to determine correct cell distributions and create tissue atlases.
+-Gap in Previous Paper: Many methods neglect biological constraints, forcing predictions of all cell types across spatial locations, resulting in implausible outcomes.
+
+Now that you have all the information you need from the reference paper (please read it very carefully) and you have my idea, I need your help in the following:
+1) Clear definition of the biological problem, in full detail (copied from statement: Define the problem you are solving and the context of your research. Explain exactly what you are doing and the objectives of the project.)
+2) Talk about some of the methods/solutions mentioned in the reference paper, highlighting their attempts and their gaps.
+3) This is the tricky part, I need to come up with my own solution (work on an actual dataset which is mentioned in the paper)
+4) Lastly, I need to document this progress and record results, so I can place it in my research paper. I need evidence of progress. This includes data collected, preliminary analysis, and any technical milestones completed.
+
+Let's break this down into 2 parts:
+PART 1) Theoretical and Background research: understanding the problem, and understanding the previous solutions that are already implemented
+PART 2) My contribution: my solution, which highlights the gaps from previous solutions and improves them, then actual implementation of that solution (with numbers, data, results, and analysis)
+
+========================================================================================================================================================================================================================================================================================================================================================================================
+
+#3 Phase 2 Notes 
+Title: Sparsity-Aware Deconvolution of scRNA-Seq and Spatial Transcriptomics
+Description: An algorithm integrating single-cell RNA sequencing with spatial data that enforces strict sparsity constraints to prevent hallucinating the presence of all cell types across all locations.
+Motivation: Deconvolution methods use scRNA-seq and spatial transcriptomics to determine correct cell distributions and create tissue atlases --> using e Weight-Induced Sparse Regression, WISpR)
+Gap in previous paper: Many methods neglect biological constraints, forcing predictions of all cell types across spatial locations, resulting in implausible outcomes.
+_______________________________________________
+
+Abstract: Mapping cell distributions across spatial locations with whole-genome coverage is essential for understanding cellular responses and signaling However, current deconvolution models aim to estimate the proportions of distinct cell types in each spatial transcriptomics spot by integrating reference single-cell data. These models often assume strong overlap between the reference and spatial datasets, neglecting biology-grounded constraints such as sparsity and cell-type variations, as well as technical sparsity. As a result, these methods rely on over-permissive algorithms that ignore given constraints leading to inaccurate predictions, particularly in heterogeneous or unmatched datasets. We introduce Weight-Induced Sparse Regression (WISpR), a machine learning algorithm that integrates spot-specific hyperparameters and sparsity-driven modeling. Unlike conventional approaches that neglect biology-grounded constraints, WISpR accurately predicts cell-type distributions while preserving biological coherence, i.e., spatially and functionally consistent cell-type localization, even in unmatched datasets. Benchmarking against five alternative methods across ten datasets, WISpR consistently outperformed competitors and predicted cellular landscapes in both normal and cancerous tissues. By leveraging sparse cell-type arrangements, WISpR provides biologically informed, high-resolution cellular maps. Its ability to decode tissue organization in both healthy and diseased states highlights WISpR's practical utility for spatial transcriptomics, particularly in challenging settings involving noise, sparsity, or reference mismatches.
+
+Author Summary: Life is like a puzzle: Each cell or gene is a piece that contributes to the big picture. To truly understand health and disease, we must not only know which components are present but also how they are spatially organized and interact. Tissues are composed of diverse cell types with distinct roles, and spatial transcriptomics allows us to map gene activity across tissue sections. However, due to limited resolution, each measurement often contains signals from multiple cell types. In contrast, single-cell RNA sequencing (scRNA-Seq) offers cell-level resolution, but lacks spatial context, as having puzzle pieces without the guiding image. To bridge this gap, deconvolution methods aim to infer which cell types are present at each spatial location. Yet, using cross-study scRNASeq references can introduce mismatches due to batch effects, incomplete annotations, or biological variability. We developed WISpR (Weight-Induced Sparse Regression), a mathematically robust deconvolution framework that selectively extracts only the most informative cell types at each spot. WISpR is resilient to noisy, sparse, or mismatched data, outperforming existing tools. Applied to simulated and real datasets, including developing heart, brain, and tumors, WISpR reveals meaningful biological patterns and enhances our understanding of tissue architecture and cellular heterogeneity in health and disease.
+
+========================================================================================================================================================================================================================================================================================================================================================================================
+
+#4 Lec Notes- How to write a research paper (my notes)
+- you need to write a clear title
+- abstract 150-300 words --> should be the LAST thing to write
+
+Types of Scientific Writing:
+- written in the slides
+
+Ingredients of a good science paper:
+- novelty of research
+- mention in brief other relevant research paper (literature review)
+- include statistics (prove everything with numbers)
+
+research paper purpose = citation, how many people used this reference, this raised the author's credibility
+
+ofc the paper must be good (as English ya3ni)
+
+if the project is not published, the project is unfinished
+
+Improvement Cycle:
+copy from slides
+
+Organization:
+it's accepted to compare with other papers and mention that your results were not "better" 
+
+Title = not too long or too detailed, eye-catchy and grabs the user's attention (no one will read the paper if the title is too long or too complicated)
+
+Abstract = short overall idea
+
+note: AI is a good reviewing tool for grammar and writing, but publishing a good paper, plagiarism-free is not easy nowadays.
+
+Search on Google Scholar with keywords, date, etc.
+
+If there's a journal (e.g. Neuroscience) that published a paper similar to mine, it's an indication that this journal is interested in that field, so I can later target that journal for publication.
+
+Read the "about the journal" part, Aims & Scope, budget, etc.
+
+Other AI tool = scispace
+
+semantic scholar (a tool other than Google Scholar) 
+
+survey = no search, just a collection of other searches
+
+notice the received and accepted dates on the research paper
+
+*sara7t hena*
+
+when addressing a limitation in the abstract, you can also propose a solution, even if it's not actually implemented
+
+Introduction (after abstract) is basically the same thing but with more detail, then at the end you should explain your contribution
+
+explaining an example in a paper (took a while, I was half asleep)
+
+_________________________
+
+Publication in which journal?
+
+Quartiles in the journal = collecting the papers and sorting them according to the highest citation first (so the highest citation is in Q1) 
+
+connected papers = gives details to the citation of the paper
+
+chatPDF
+
+========================================================================================================================================================================================================================================================================================================================================================================================
+
+#5 TA Notes:
+Eng Adham's Comments - Research Milestone 1:
+
+- try other models (p23) and compare results
+
+- check the reference for the other algorithms
+
+- data preparation in a more optimum format (check recent papers)
+
+- note that when you inc/dec the threshold, this will affect the results (could have a -ve effect) 
+this is VERY imp
+
+_________________________________________________
+
+milestone 2 comments:
+
+- use gemini deep search (better than chatGPT) 
+- threshold (graph from the whiteboard)
+- what are the results based on (which assumptions)
+
+- study the dataset itself (basic data analytics)
+
+_______________________
+
+- accuracy is not the only reference (it could be misleading) focus also on the F1-score
+
+ multiclassification
+
+mental note: ask ghonemy about this, shaklo fahem
+
+Here

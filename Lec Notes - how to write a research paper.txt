@@ -1,0 +1,61 @@
+How to write a research paper (my notes)
+- you need to write a clear title
+- abstract 150-300 words --> should be the LAST thing to write
+
+Types of Scientific Writing:
+- written in the slides
+
+Ingredients of a good science paper:
+- novelty of research
+- mention in brief other relevant research paper (literature review)
+- include statistics (prove everything with numbers)
+
+research paper purpose = citation, how many people used this reference, this raised the author's credibility
+
+ofc the paper must be good (as English ya3ni)
+
+if the project is not published, the project is unfinished
+
+Improvement Cycle:
+copy from slides
+
+Organization:
+it's accepted to compare with other papers and mention that your results were not "better" 
+
+Title = not too long or too detailed, eye-catchy and grabs the user's attention (no one will read the paper if the title is too long or too complicated)
+
+Abstract = short overall idea
+
+note: AI is a good reviewing tool for grammar and writing, but publishing a good paper, plagiarism-free is not easy nowadays.
+
+Search on Google Scholar with keywords, date, etc.
+
+If there's a journal (e.g. Neuroscience) that published a paper similar to mine, it's an indication that this journal is interested in that field, so I can later target that journal for publication.
+
+Read the "about the journal" part, Aims & Scope, budget, etc.
+
+Other AI tool = scispace
+
+semantic scholar (a tool other than Google Scholar) 
+
+survey = no search, just a collection of other searches
+
+notice the received and accepted dates on the research paper
+
+*sara7t hena*
+
+when addressing a limitation in the abstract, you can also propose a solution, even if it's not actually implemented
+
+Introduction (after abstract) is basically the same thing but with more detail, then at the end you should explain your contribution
+
+explaining an example in a paper (took a while, I was half asleep)
+
+_________________________
+
+Publication in which journal?
+
+Quartiles in the journal = collecting the papers and sorting them according to the highest citation first (so the highest citation is in Q1) 
+
+connected papers = gives details to the citation of the paper
+
+chatPDF

@@ -1,0 +1,28 @@
+Eng Adham's Comments - Research Milestone 1:
+
+- try other models (p23) and compare results
+
+- check the reference for the other algorithms
+
+- data preparation in a more optimum format (check recent papers)
+
+- note that when you inc/dec the threshold, this will affect the results (could have a -ve effect) 
+this is VERY imp
+
+_________________________________________________
+
+milestone 2 comments:
+
+- use gemini deep search (better than chatGPT) 
+- threshold (graph from the whiteboard)
+- what are the results based on (which assumptions)
+
+- study the dataset itself (basic data analytics)
+
+_______________________
+
+- accuracy is not the only reference (it could be misleading) focus also on the F1-score
+
+ multiclassification
+
+mental note: ask ghonemy about this, shaklo fahem

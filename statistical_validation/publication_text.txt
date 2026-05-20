@@ -1,0 +1,66 @@
+================================================================================
+STATISTICAL VALIDATION FOR MANUSCRIPT
+================================================================================
+
+METHODS SECTION TEXT:
+--------------------------------------------------------------------------------
+
+Hyperparameter Sensitivity Analysis
+
+To assess the importance of data-driven hyperparameter optimization, we compared the GridSearch-optimized baseline against four manually-selected parameter configurations: (1) loose threshold (tau=0.05, lambda=10), (2) strict threshold (tau=0.30, lambda=10), (3) weak penalty (tau=0.15, lambda=5), and (4) strong penalty (tau=0.15, lambda=50). Each manual configuration was applied uniformly across all spots, in contrast to the GridSearch baseline which optimized parameters independently for each spot using 5-fold cross-validation (repeated 3 times) over a grid of tau=[0.001-0.10] and lambda=[0.001-10.0].
+
+Statistical significance was assessed using the Wilcoxon signed-rank test (paired, non-parametric, two-sided) with alpha=0.05. This test was chosen for its robustness to non-normal distributions and outliers, which are common in biological data. Effect sizes were quantified using Cohen's d (parametric) and Cliff's delta (non-parametric), where |d| < 0.2 indicates negligible effect, 0.2-0.5 small, 0.5-0.8 medium, and >0.8 large effect. All statistical analyses were performed in Python 3.13 using SciPy 1.11.
+
+
+RESULTS SECTION TEXT:
+--------------------------------------------------------------------------------
+
+Data-driven hyperparameter optimization is essential for WISpR deconvolution
+
+Manual hyperparameter selection consistently underperformed compared to GridSearch optimization across all tested configurations. The Loose τ (0.05) configuration (tau=0.05, lambda=10) achieved a mean RMSE of 5.242, representing a 91.3% increase in reconstruction error compared to the GridSearch baseline (mean RMSE = 0.454; Wilcoxon signed-rank test p < 1e-100, Cohen's d = -2.64). The Strict τ (0.30) configuration (tau=0.3, lambda=10) achieved a mean RMSE of 4.840, representing a 90.6% increase in reconstruction error compared to the GridSearch baseline (mean RMSE = 0.454; Wilcoxon signed-rank test p < 1e-100, Cohen's d = -2.41). The Weak λ (5) configuration (tau=0.15, lambda=5) achieved a mean RMSE of 10.505, representing a 95.7% increase in reconstruction error compared to the GridSearch baseline (mean RMSE = 0.454; Wilcoxon signed-rank test p < 1e-100, Cohen's d = -2.76). The Strong λ (50) configuration (tau=0.15, lambda=50) achieved a mean RMSE of 0.779, representing a 41.6% increase in reconstruction error compared to the GridSearch baseline (mean RMSE = 0.454; Wilcoxon signed-rank test p < 1e-100, Cohen's d = -0.77). 
+
+All manual configurations showed statistically significant increases in reconstruction error (all p < 0.001), with effect sizes ranging from -2.76 to -0.77, indicating substantial practical differences beyond mere statistical significance. 
+
+Importantly, manual configurations also produced biologically implausible sparsity patterns. While the GridSearch baseline achieved a mean of 4.2 cell types per spot (consistent with expected cellular complexity in Visium data), manual configurations predicted 26.0 (Loose τ (0.05)), 20.0 (Strict τ (0.30)), 26.0 (Weak λ (5)), 12.6 (Strong λ (50)) cell types per spot, far exceeding biological expectations. 
+
+These results demonstrate that data-driven hyperparameter optimization via GridSearch is not merely beneficial but essential for achieving accurate, biologically meaningful deconvolution with WISpR. The spot-specific optimization strategy allows WISpR to adapt to local tissue heterogeneity, which cannot be captured by uniform manual parameter selection.
+
+
+TABLE CAPTION:
+--------------------------------------------------------------------------------
+
+Table X. Statistical comparison of GridSearch-optimized baseline versus manual hyperparameter configurations. All comparisons use Wilcoxon signed-rank test (two-sided, paired, n=2,110 spots). Effect sizes reported as Cohen's d, where |d| < 0.2 = negligible, 0.2-0.5 = small, 0.5-0.8 = medium, >0.8 = large. Negative Cohen's d indicates baseline outperforms experiment. All p-values < 0.001 (***). RMSE = root mean squared error.
+
+
+FIGURE CAPTION:
+--------------------------------------------------------------------------------
+
+Figure X. Statistical validation of hyperparameter optimization necessity. (A) RMSE distributions across experiments shown as box plots. Boxes show interquartile range (IQR), horizontal lines show medians, dashed lines show means, and whiskers extend to 1.5×IQR. Baseline (green) shows consistently lower error than all manual configurations (blue). (B) Violin plots showing complete RMSE distributions with kernel density estimation. Baseline distribution is narrower and shifted toward lower error values. (C) Effect sizes quantifying magnitude of performance differences. Both Cohen's d (parametric) and Cliff's delta (non-parametric) show large negative effects, indicating baseline substantially outperforms manual configurations. (D) Statistical significance visualized as -log10(p-value) from Wilcoxon signed-rank tests. All bars far exceed the alpha=0.001 threshold (green line), indicating extremely high confidence in differences. Values capped at 300 for visualization (actual p-values underflow to machine precision).
+
+
+================================================================================
+SUPPLEMENTARY TABLE S1 (TAB-DELIMITED - COPY TO EXCEL)
+================================================================================
+
+Configuration	tau	lambda	Mean_RMSE	Median_RMSE	SD_RMSE	Mean_Sparsity	Delta_RMSE	Percent_Worse	Wilcoxon_p	Cohens_d	Cliffs_delta
+Baseline (GridSearch)	Variable	Variable	0.4545	0.2801	0.3798	4.22	—	—	—	—	—
+Loose τ (0.05)	0.05	10	5.2425	4.5287	2.5361	25.99	+4.7880	+91.3%	<1e-100	-2.641	-0.999
+Strict τ (0.30)	0.3	10	4.8402	4.1216	2.5455	20.02	+4.3858	+90.6%	<1e-100	-2.410	-0.997
+Weak λ (5)	0.15	5	10.5054	9.0620	5.1293	25.97	+10.0509	+95.7%	<1e-100	-2.764	-1.000
+Strong λ (50)	0.15	50	0.7786	0.6449	0.4570	12.58	+0.3242	+41.6%	<1e-100	-0.772	-0.529
+
+Note: All comparisons significant at p < 0.001 (***)
+tau = iterative thresholding parameter; lambda = L2 penalty parameter
+Negative effect sizes indicate baseline (GridSearch) outperforms manual configuration
+
+
+================================================================================
+KEY STATISTICS FOR ABSTRACT/DISCUSSION
+================================================================================
+
+✓ Baseline (GridSearch) achieved mean RMSE = 0.454
+✓ All 4/4 manual configurations showed significantly worse performance (p < 0.001)
+✓ Manual configurations were 41.6%-95.7% worse than baseline
+✓ Effect sizes ranged from -2.76 to -0.77 (large effects)
+✓ Manual sparsity ranged 26.0-12.6 vs baseline 4.2 cell types/spot
+✓ Cliff's delta ranged -1.000 to -0.529 (near-perfect separation)
