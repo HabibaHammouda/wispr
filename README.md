@@ -1,5 +1,7 @@
 # Important Note: this README file is created by Claude AI.
 
+---
+
 # Data-Driven Hyperparameter Optimization for Accurate Sparse Deconvolution of Spatial Transcriptomic Data
 
 **Author:** Habiba Hammouda  
